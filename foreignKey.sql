@@ -17,4 +17,13 @@ VALUES
 ('sagor'),
 ('nodi')
 
+INSERT INTO post (title, user_id) VALUES
+('enjoying a sunny day with akash', 2),
+('Batash just shared an amazing recipe', 1),
+('Exploring adventure with sagor!', 4),
+('nodi''s wisdom always leaves me inspired!', 4)
+
 SELECT * from "user";
+SELECT * from post;
+
+INSERT INTO post(title, user_id) VALUES('test', NULL)
