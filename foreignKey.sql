@@ -7,7 +7,7 @@ CREATE TABLE "user" (
 CREATE TABLE post (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
-    user_id INTEGER REFERENCES "user"(id)
+    user_id INTEGER REFERENCES "user"(id) ON DELETE CASCADE
 )
 
 INSERT INTO "user"(username)
@@ -26,4 +26,11 @@ INSERT INTO post (title, user_id) VALUES
 SELECT * from "user";
 SELECT * from post;
 
+DROP TABLE post;
+DROP TABLE "user"
+
 INSERT INTO post(title, user_id) VALUES('test', NULL)
+
+--Restrict deletion:
+DELETE FROM "user"
+    WHERE id = 4;
