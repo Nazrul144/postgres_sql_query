@@ -36,3 +36,28 @@ $$
 SELECT delete_emp_by_id(28)
 
 SELECT * from employees1;
+
+CREATE Procedure remove_emp()
+LANGUAGE plpgsql
+AS
+$$
+    BEGIN
+        DELETE FROM employees1 WHERE employee_id = 28;
+    END
+$$
+
+CREATE Procedure remove_emp_var1(p_emp_id int)
+LANGUAGE plpgsql
+AS
+$$
+    DECLARE
+    test_var int;
+    BEGIN
+       SELECT employee_id INTO test_var from employees1 WHERE employee_id = p_emp_id;
+        DELETE FROM employees1 WHERE employee_id = test_var;
+    END
+$$
+
+SELECT * from employees1;
+ 
+call remove_emp_var1(25);
