@@ -79,3 +79,8 @@ JOIN employees USING(department_id)
 GROUP BY department_name;
 
 --Find the department name with the hight average salary:
+SELECT department_name, round(avg(salary)) as avg_salary FROM departments
+JOIN employees USING(department_id)
+GROUP BY department_name
+ORDER BY avg_salary DESC
+LIMIT 1; 
