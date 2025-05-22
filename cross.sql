@@ -23,4 +23,10 @@ VALUES
 --Cross Joint:
 
 SELECT * FROM employee
-CROSS JOIN department
+CROSS JOIN department;
+
+
+--Natural Joint:
+
+SELECT * FROM employee
+NATURAL JOIN department
