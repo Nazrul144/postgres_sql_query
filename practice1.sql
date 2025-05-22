@@ -67,6 +67,15 @@ SELECT employees, departments from employees
 JOIN departments USING(department_id)
 
 --2. Show department name with average salary:
-SELECT department_name, avg(salary) as department_average_salary FROM departments 
+SELECT department_name, round(avg(salary)) as department_average_salary FROM departments 
 JOIN employees USING(department_id)
-GROUP BY department_name
+GROUP BY department_name;
+
+
+--Count employee in each department:
+
+SELECT department_name, count(*) FROM departments
+JOIN employees USING(department_id)
+GROUP BY department_name;
+
+--Find the department name with the hight average salary:
