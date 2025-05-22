@@ -65,3 +65,8 @@ INSERT INTO departments (department_name) VALUES
 
 SELECT employees, departments from employees
 JOIN departments USING(department_id)
+
+--2. Show department name with average salary:
+SELECT department_name, avg(salary) as department_average_salary FROM departments 
+JOIN employees USING(department_id)
+GROUP BY department_name
